@@ -15,6 +15,10 @@ import { captureRef } from "react-native-view-shot";
 import domtoimage from "dom-to-image";
 const PlaceHolderImage = require("./assets/images/background-image.png");
 
+if (typeof window !== "undefined") {
+  window._frameTimestamp = null;
+}
+
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAppOptions, setShowAppOptions] = useState(false);
